@@ -144,6 +144,50 @@ python main.py
 
 ---
 
+## Docker Setup
+
+1. Clone the repository
+   ```
+   git clone https://github.com/AnonymousXempt/TempMail-Discord.git
+   cd TempMail-Discord
+   ```
+   
+2. Configure the `.env` file
+   Ensure that you have the correct values set in your `.env` file for your environment.
+   
+3. Build the Docker image manually (optional)
+   ```
+   docker build -t tempmail-discord .
+   ```
+4. Run the bot container
+   You can run the bot in two ways:
+   - **Option A: Using Docker CLI**
+     ```
+     docker run --env-file .env tempmail-discord
+     ```
+   - **Option B: Using Docker Compose**
+     
+     Make sure your project has a docker-compose.yml file like this (adjust based on parent directory):
+     ```
+     services:
+       tempmail-discord:
+         build: .
+         container_name: tempmail_discord
+         restart: unless-stopped
+         env_file:
+           - .env
+         volumes:
+           - ./:/app
+         working_dir: /app
+         command: python main.py
+     ```
+	   To run the container in detached mode (background):
+	   ```
+	   docker-compose up -d
+	   ```
+
+---
+
 ## Roadmap
 
 - [x] **CLI App** – Fully functional terminal interface to generate and monitor temp emails in real-time [(Goto)](https://github.com/AnonymousXempt/TempMail-CLI)
