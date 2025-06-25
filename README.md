@@ -140,7 +140,7 @@ python main.py
 
 ## Screenshot
 
-![Screenshot 2025-06-25 152737](https://github.com/user-attachments/assets/d7bc7404-5977-4e51-9a20-5b585ea14afd)
+![Screenshot](https://github.com/user-attachments/assets/95bbb45b-ee30-4946-8ee8-64355e9dbe79)
 
 ---
 
