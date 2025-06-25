@@ -309,8 +309,6 @@ async def end_bot(ctx):
     except discord.Forbidden:
         logger.warning("Bot lacks permission during end cleanup")
 
-    await ctx.send("Session ended and cleaned up.")
-
 
 @bot.command(name="force_end")
 async def force_end(ctx):
